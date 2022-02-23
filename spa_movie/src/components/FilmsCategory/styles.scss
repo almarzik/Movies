@@ -1,0 +1,32 @@
+.filmsCategoryList {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     row-gap: 25px;
+     column-gap: 32px;
+     background: #ffffff;
+     border-radius: 20px;
+
+     .filmsCategory__card {
+          display: flex;
+          color: black;
+          width: 509px;
+          max-width: 509px;
+          img {
+               border-radius: 20px;
+          }
+          .names__wrapper {
+               margin-left: 43px;
+          }
+          .films__title {
+               font-size: 20px;
+               font-weight: 600;
+               margin-bottom: 57px;
+          }
+          .films__genre {
+               font-size: 16px;
+          }
+     }
+}

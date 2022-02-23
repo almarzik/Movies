@@ -1,0 +1,48 @@
+.mainSearchPage {
+     align-items: center;
+     .search__title {
+          font-size: 30px;
+          text-align: center;
+          color: black;
+          text-align: left;
+          margin-bottom: 30px;
+     }
+     //      input {
+     //           width: 1050px;
+     //           height: 40px;
+     //           border: 1px solid #888888;
+     //           box-sizing: border-box;
+     //           border-radius: 20px;
+     //      }
+}
+
+input {
+     width: 1050px;
+     height: 40px;
+     border: 1px solid #888888;
+     color: black;
+     box-sizing: border-box;
+     font-size: 15px;
+     font-weight: 600;
+     border-radius: 20px;
+     padding: 15px;
+}
+
+.search__result {
+     color: black;
+     font-weight: 600;
+     font-size: 20px;
+     margin-top: 30px;
+     margin-bottom: 70px;
+}
+
+.search__null {
+     font-weight: 300;
+     font-size: 15px;
+     line-height: 20px;
+     text-align: center;
+     color: black;
+     width: 232px;
+     margin: 0 auto;
+     margin-bottom: 100px;
+}

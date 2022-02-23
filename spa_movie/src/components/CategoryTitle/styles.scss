@@ -1,0 +1,14 @@
+.category {
+     display: flex;
+     font-size: 30px;
+     margin-bottom: 50px;
+     &__head {
+          font-weight: 600;
+          margin-right: 35px;
+          color: black;
+     }
+     &__title {
+          font-weight: 700;
+          color: #e59c9c;
+     }
+}

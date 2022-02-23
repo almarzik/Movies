@@ -1,0 +1,14 @@
+.filmsList {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     row-gap: 10px;
+     .filmsItem {
+          margin-right: 110px;
+     }
+     .filmsItem:nth-child(4n + 4) {
+          margin-right: 0;
+     }
+}

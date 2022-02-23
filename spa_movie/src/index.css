@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700,800);
+body {
+     margin: 0;
+     font-family: "Open Sans", sans-serif;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     color: #fff;
+     font-size: 13px;
+     background: url(../src/assets/bg.jpg) no-repeat center center / cover;
+}
+
+code {
+     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+          monospace;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     margin: 0;
+}
+
+a {
+     text-decoration: none;
+     color: #fff;
+}

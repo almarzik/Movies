@@ -1,0 +1,20 @@
+.mainPage {
+     padding-bottom: 50px;
+}
+.main__header {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 50px;
+     .main__title {
+          font-size: 60px;
+          font-weight: 700;
+          color: #e59c9c;
+     }
+     .main__subtitle {
+          font-size: 30px;
+          font-weight: 700;
+          color: black;
+     }
+}

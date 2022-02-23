@@ -1,0 +1,32 @@
+.films__card {
+     color: #000;
+     font-size: 13px;
+     max-width: 180px;
+     text-align: left;
+     img {
+          margin-bottom: 20px;
+          width: 180px;
+          height: 260px;
+          border-radius: 20px;
+     }
+     .films__title {
+          font-weight: 600;
+          font-size: 15px;
+          margin-bottom: 25px;
+     }
+     .films__wrap {
+          margin-bottom: 10px;
+          display: flex;
+     }
+     .films__year {
+          margin-right: 5px;
+     }
+     .films__genre {
+          margin-bottom: 18px;
+     }
+}
+.postsItem {
+     .title {
+          color: #000;
+     }
+}
