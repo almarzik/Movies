@@ -39,7 +39,7 @@ const SearchPage = () => {
                     <FilmsCategory list={filmsList} />
                ) : (
                     <h2 className="search__null">
-                         Введите поисковой запрос для отображения результатов
+                         Введите поисковой запрос для отображения результатов!
                     </h2>
                )}
           </section>
