@@ -6,7 +6,6 @@ import DateView from "components/DateView";
 
 import { routeMain as routeFilmsDetails } from "pages/FilmsDetails";
 
-import { IFilmsDetail } from "types/IFilmsDetail";
 import { IFilms } from "types/IFilms";
 import "./styles.scss";
 

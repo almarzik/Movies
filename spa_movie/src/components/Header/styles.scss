@@ -9,8 +9,9 @@
                font-size: 20px;
                font-weight: 400;
                line-height: 27px;
-               &.linkActive {
-                    color: #004fec;
+               &.active {
+                    color: #e59c9c;
+                    text-decoration: underline;
                }
                &:first-child {
                     margin-left: 0;
