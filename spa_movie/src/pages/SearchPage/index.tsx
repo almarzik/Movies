@@ -35,7 +35,7 @@ const SearchPage = () => {
                     placeholder="Введите жанр"
                />
                <h2 className="search__result">Результаты поиска:</h2>
-               {filmsList.length ? (
+               {debouncedSearchTerm.length ? (
                     <FilmsCategory list={filmsList} />
                ) : (
                     <h2 className="search__null">

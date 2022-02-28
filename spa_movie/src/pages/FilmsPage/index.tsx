@@ -18,7 +18,7 @@ const FilmsPage = () => {
      }, [dispatch]);
      return (
           <div className="filmsPage">
-               <CategoryFilms title="Flash" />
+               <CategoryFilms title="Books" />
                {filmsList.length > 0 && <FilmsCategory list={filmsList} />}
           </div>
      );

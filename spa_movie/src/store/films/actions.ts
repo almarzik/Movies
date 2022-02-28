@@ -10,6 +10,18 @@ export const setFilmsAction = (list: IStore['list']) => {
             payload: list,
       }
 }
+export const setFilmsDetailsAction = (list: IStore['list']) => {
+      return {
+            type: 'filmsDetails/setFilmsDetails',
+            payload: list,
+      }
+}
+export const setFilmsSearchAction = (list: IStore['list']) => {
+      return {
+            type: 'filmsSearch/setFilmsSearch',
+            payload: list,
+      }
+}
 
 
 export const loadFilms = () => async (dispatch: Dispatch) => {
@@ -23,7 +35,7 @@ export const loadFilms = () => async (dispatch: Dispatch) => {
 export const loadFilmsSearch = (value:string) => async (dispatch: Dispatch) => {
       try {
             const { data } = await getSearchFilms(value);
-            dispatch(setFilmsAction(data))
+            dispatch(setFilmsSearchAction(data))
       } catch(e) {
             console.log(e)
       }
@@ -31,7 +43,7 @@ export const loadFilmsSearch = (value:string) => async (dispatch: Dispatch) => {
 export const loadFilmsDetails = (id:string) => async (dispatch: Dispatch) => {
       try {
             const { data } = await getFilmsDetails(id);
-            dispatch(setFilmsAction(data))
+            dispatch(setFilmsDetailsAction(data))
       } catch(e) {
             console.log(e)
       }
