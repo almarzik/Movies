@@ -1,0 +1,21 @@
+.header {
+     display: flex;
+     justify-content: space-between;
+     padding: 57px 0;
+     margin-bottom: 98px;
+     nav {
+          a {
+               margin-left: 60px;
+               font-size: 20px;
+               font-weight: 400;
+               line-height: 27px;
+               &.active {
+                    color: #e59c9c;
+                    text-decoration: underline;
+               }
+               &:first-child {
+                    margin-left: 0;
+               }
+          }
+     }
+}

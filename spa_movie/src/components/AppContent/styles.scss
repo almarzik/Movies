@@ -1,0 +1,19 @@
+.wrapper {
+     margin-left: auto;
+     margin-right: auto;
+     width: 1230px;
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     main {
+          flex: 1 0 auto;
+          background: #ffffff;
+          border-radius: 20px;
+          padding: 40px 90px;
+          margin-bottom: 172px;
+     }
+
+     footer {
+          flex: 0 0 auto;
+     }
+}

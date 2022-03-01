@@ -1,0 +1,56 @@
+.filmsDetailPage {
+     color: black;
+     .filmsDetailWrapper {
+          padding: 0px 0 90px;
+          display: flex;
+
+          .films__img {
+               width: 229px;
+               max-width: 229px;
+               height: 339px;
+               border-radius: 20px;
+               margin-right: 24px;
+          }
+          .star {
+               display: flex;
+               align-items: center;
+               .average {
+                    font-size: 27px;
+                    font-weight: 800;
+                    margin-left: 11px;
+               }
+          }
+          .mainInfo__title {
+               display: flex;
+               justify-content: space-between;
+               margin-bottom: 64px;
+          }
+          .info__title {
+               font-size: 28px;
+               font-weight: 700;
+               text-transform: uppercase;
+               color: #e59c9c;
+          }
+     }
+     .main__info {
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 14px;
+          .title {
+               font-size: 16px;
+               margin-right: 50px;
+               width: 116px;
+          }
+          .wrap {
+               display: flex;
+               margin-bottom: 22px;
+          }
+          .summary__text {
+               font-size: 16px;
+               text-align: justify;
+               text-transform: none;
+               font-weight: 400;
+               width: 632px;
+          }
+     }
+}

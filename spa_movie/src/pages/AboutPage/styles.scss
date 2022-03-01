@@ -1,0 +1,23 @@
+.aboutPage {
+     display: flex;
+     color: black;
+     justify-content: space-between;
+
+     padding: 10px;
+
+     .aboutPage__img {
+          width: 409px;
+          height: 272px;
+          border-radius: 20px;
+     }
+     .about {
+          &__title {
+               font-weight: 700;
+               font-size: 30px;
+               margin-bottom: 16px;
+          }
+          &__text {
+               width: 594px;
+          }
+     }
+}
