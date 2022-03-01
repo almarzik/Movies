@@ -1,28 +1,24 @@
-import React, { useEffect, useState, ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import useDebounce from "./hooks/useDebounce";
 
 import routeMain from "./routes";
 import "./styles.scss";
-import { selectList } from "store/films/selectors";
+import { selectSearchList } from "store/films/selectors";
 import { loadFilmsSearch } from "store/films/actions";
 import FilmsCategory from "components/FilmsCategory";
 
 const SearchPage = () => {
      const [searchTerm, setSearchTerm] = useState("");
-     const [results, setResults] = useState([]);
      const debouncedSearchTerm = useDebounce(searchTerm, 1000);
 
      const dispatch = useDispatch();
-     const filmsList = useSelector(selectList);
+     const searchList = useSelector(selectSearchList);
 
      useEffect(() => {
           if (debouncedSearchTerm) {
                dispatch(loadFilmsSearch(debouncedSearchTerm));
-               setResults(results);
-          } else {
-               setResults([]);
           }
      }, [dispatch, debouncedSearchTerm]);
 
@@ -35,8 +31,8 @@ const SearchPage = () => {
                     placeholder="Введите жанр"
                />
                <h2 className="search__result">Результаты поиска:</h2>
-               {debouncedSearchTerm.length ? (
-                    <FilmsCategory list={filmsList} />
+               {searchList.length ? (
+                    <FilmsCategory list={searchList} />
                ) : (
                     <h2 className="search__null">
                          Введите поисковой запрос для отображения результатов!

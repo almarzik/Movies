@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { loadFilms } from "store/films/actions";
-import { selectList } from "store/films/selectors";
+import { loadFilmsMain } from "store/films/actions";
+import { selectMainList } from "store/films/selectors";
 
 import FilmsList from "components/FilmsList";
 
@@ -11,10 +11,10 @@ import "./styles.scss";
 
 const MainPage = () => {
      const dispatch = useDispatch();
-     const filmsList = useSelector(selectList);
+     const filmsMainList = useSelector(selectMainList);
 
      useEffect(() => {
-          dispatch(loadFilms());
+          dispatch(loadFilmsMain());
      }, [dispatch]);
      return (
           <section className="mainPage">
@@ -25,8 +25,8 @@ const MainPage = () => {
                     </p>
                </div>
                <div className="films__cards">
-                    {filmsList.length > 0 && (
-                         <FilmsList list={filmsList.slice(0, 8)} />
+                    {filmsMainList.length > 0 && (
+                         <FilmsList list={filmsMainList.slice(0, 8)} />
                     )}
                </div>
           </section>

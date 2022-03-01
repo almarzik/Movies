@@ -3,7 +3,7 @@ import React from "react";
 import FilmsItem from "./components/FilmsItem";
 
 import { IFilmsDetail } from "types/IFilmsDetail";
-import { IFilms } from "types/IFilms";
+
 import "./styles.scss";
 
 interface IFilmsListParams {

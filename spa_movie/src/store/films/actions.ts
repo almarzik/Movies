@@ -4,34 +4,50 @@ import getFilmsDetails from "services/getFilmsDetails"
 import getSearchFilms from "services/getSearchFilms"
 import { IStore } from "./types"
 
-export const setFilmsAction = (list: IStore['list']) => {
+export const setFilmsMainAction = (mainList: IStore['mainList']) => {
       return {
-            type: 'films/setFilms',
-            payload: list,
+            type: 'filmsMain/setFilmsMain',
+            payload: mainList,
       }
 }
-export const setFilmsDetailsAction = (list: IStore['list']) => {
+export const setFilmsCategoryAction = (categoryList: IStore['categoryList']) => {
+      return {
+            type: 'filmsCategory/setFilmsCategory',
+            payload: categoryList,
+      }
+}
+
+export const setFilmsDetailsAction = (filmsDetail: IStore['filmsDetail']) => {
       return {
             type: 'filmsDetails/setFilmsDetails',
-            payload: list,
+            payload: filmsDetail,
       }
 }
-export const setFilmsSearchAction = (list: IStore['list']) => {
+export const setFilmsSearchAction = (searchList: IStore['searchList']) => {
       return {
             type: 'filmsSearch/setFilmsSearch',
-            payload: list,
+            payload: searchList,
       }
 }
 
-
-export const loadFilms = () => async (dispatch: Dispatch) => {
+export const loadFilmsMain = () => async (dispatch: Dispatch) => {
       try {
             const { data } = await getFilms();
-            dispatch(setFilmsAction(data))
+            dispatch(setFilmsMainAction(data))
       } catch(e) {
             console.log(e)
       }
 }
+export const loadFilmsCategory = () => async (dispatch: Dispatch) => {
+      try {
+            const { data } = await getFilms();
+            dispatch(setFilmsCategoryAction(data))
+      } catch(e) {
+            console.log(e)
+      }
+}
+
+
 export const loadFilmsSearch = (value:string) => async (dispatch: Dispatch) => {
       try {
             const { data } = await getSearchFilms(value);

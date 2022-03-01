@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 
 import { loadFilmsDetails } from "store/films/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { selectList } from "store/films/selectors";
+import { selectFilmsDetail } from "store/films/selectors";
+
+import NotImage from "../../assets/imageNot.jpg";
 
 import { ID } from "types/ID";
 import star from "../../assets/star.png";
@@ -15,111 +17,116 @@ import { IFilmsDetail } from "types/IFilmsDetail";
 const FilmsDetails = () => {
      const { id } = useParams<ID>();
      const dispatch = useDispatch();
-     const filmsList = useSelector(selectList);
+     const filmsListDetail = useSelector(selectFilmsDetail);
      useEffect(() => {
           dispatch(loadFilmsDetails(id.toString()));
      }, [dispatch, id]);
 
      return (
           <section className="filmsDetailPage">
-               {filmsList.map((films: IFilmsDetail) =>
-                    films.show.id.toString() === id ? (
-                         <div
-                              className="filmsDetailWrapper "
-                              key={films.show.id.toString()}
-                         >
-                              {films.show.image ? (
-                                   <img
-                                        className="films__img"
-                                        src={films.show.image.medium}
-                                        alt={films.show.name}
-                                   />
-                              ) : (
-                                   <img
-                                        className="films__img"
-                                        alt={films.show.name}
-                                   />
-                              )}
+               {filmsListDetail && (
+                    <div
+                         className="filmsDetailWrapper "
+                         key={filmsListDetail.id.toString()}
+                    >
+                         {filmsListDetail.image ? (
+                              <img
+                                   className="films__img"
+                                   src={filmsListDetail.image.medium}
+                                   alt={filmsListDetail.name}
+                              />
+                         ) : (
+                              <img
+                                   className="films__img"
+                                   src={NotImage}
+                                   alt=""
+                              />
+                         )}
 
-                              <div className="mainWrapper__info">
-                                   <div className="mainInfo__title">
-                                        <h3 className="info__title">
-                                             {films.show.name}
-                                        </h3>
-                                        <div className="star">
-                                             <img
-                                                  src={star}
-                                                  alt={star}
-                                                  width="43"
-                                                  height="43.13"
-                                             />
-                                             {films.show.rating.average ? (
-                                                  <p className="average">
-                                                       {
-                                                            films.show.rating
-                                                                 .average
-                                                       }
-                                                       /10
-                                                  </p>
-                                             ) : null}
-                                        </div>
+                         <div className="mainWrapper__info">
+                              <div className="mainInfo__title">
+                                   <h3 className="info__title">
+                                        {filmsListDetail.name}
+                                   </h3>
+                                   <div className="star">
+                                        <img
+                                             src={star}
+                                             alt={star}
+                                             width="43"
+                                             height="43.13"
+                                        />
+                                        {filmsListDetail.rating.average ? (
+                                             <p className="average">
+                                                  {
+                                                       filmsListDetail.rating
+                                                            .average
+                                                  }
+                                                  /10
+                                             </p>
+                                        ) : (
+                                             <p className="average">NA /10</p>
+                                        )}
                                    </div>
-                                   <div className="main__info">
-                                        <div className="wrap year">
-                                             <h4 className="title year__title">
-                                                  Год выхода
-                                             </h4>
-                                             <p>{films.show.premiered}</p>
-                                        </div>
-                                        <div className="wrap country">
-                                             <h4 className="title country__title">
-                                                  Страна
-                                             </h4>
-                                             {films.show.network ? (
-                                                  <p>
-                                                       {
-                                                            films.show.network
-                                                                 .country.name
-                                                       }
-                                                  </p>
+                              </div>
+                              <div className="main__info">
+                                   <div className="wrap year">
+                                        <h4 className="title year__title">
+                                             Год выхода
+                                        </h4>
+                                        {filmsListDetail.premiered ? (
+                                             <p>{filmsListDetail.premiered}</p>
+                                        ) : (
+                                             <p>Неизвестно</p>
+                                        )}
+                                   </div>
+                                   <div className="wrap country">
+                                        <h4 className="title country__title">
+                                             Страна
+                                        </h4>
+                                        {filmsListDetail.network ? (
+                                             <p>
+                                                  {
+                                                       filmsListDetail.network
+                                                            .country.name
+                                                  }
+                                             </p>
+                                        ) : (
+                                             <p>Неизвестно</p>
+                                        )}
+                                   </div>
+
+                                   <div className="wrap genre">
+                                        <h4 className="title genre__title">
+                                             Жанр
+                                        </h4>
+                                        <p>
+                                             {filmsListDetail.genres.length ? (
+                                                  filmsListDetail.genres.join(
+                                                       ", "
+                                                  )
                                              ) : (
                                                   <p>Неизвестно</p>
                                              )}
-                                        </div>
-
-                                        <div className="wrap genre">
-                                             <h4 className="title genre__title">
-                                                  Жанр
-                                             </h4>
-                                             <p>
-                                                  {films.show.genres ? (
-                                                       films.show.genres.join(
-                                                            ", "
-                                                       )
-                                                  ) : (
-                                                       <span>Y</span>
+                                        </p>
+                                   </div>
+                                   <div className="wrap summary">
+                                        <h4 className="title summary__title">
+                                             Описание
+                                        </h4>
+                                        {filmsListDetail.summary ? (
+                                             <p className="summary__text">
+                                                  {filmsListDetail.summary.replace(
+                                                       /<\/?[a-zA-Z]+>/gi,
+                                                       ""
                                                   )}
                                              </p>
-                                        </div>
-                                        <div className="wrap summary">
-                                             <h4 className="title summary__title">
-                                                  Описание
-                                             </h4>
-                                             {films.show.summary ? (
-                                                  <p className="summary__text">
-                                                       {films.show.summary.replace(
-                                                            /<\/?[a-zA-Z]+>/gi,
-                                                            ""
-                                                       )}
-                                                  </p>
-                                             ) : (
-                                                  <p>Неизвестно</p>
-                                             )}
-                                        </div>
+                                        ) : (
+                                             <p>Неизвестно</p>
+                                        )}
                                    </div>
                               </div>
                          </div>
-                    ) : null
+                    </div>
                )}
           </section>
      );

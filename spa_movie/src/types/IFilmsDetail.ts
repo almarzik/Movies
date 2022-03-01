@@ -11,5 +11,5 @@ export interface IFilmsDetail {
       premiered: string
       network: INetwork,
       summary: string,
-      rating: IRating
+      rating: IRating,
 }

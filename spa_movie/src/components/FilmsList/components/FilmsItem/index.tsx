@@ -7,6 +7,7 @@ import DateView from "components/DateView";
 import { routeMain as routeFilmsDetails } from "pages/FilmsDetails";
 
 import { IFilms } from "types/IFilms";
+import NotImage from "../../../../assets/imageNot.jpg";
 import "./styles.scss";
 
 interface IFilmsItemParams {
@@ -22,7 +23,9 @@ const FilmsItem: React.FC<IFilmsItemParams> = ({ item }) => (
           <div className="films__card">
                {item.show.image ? (
                     <img src={item.show.image.medium} alt="" />
-               ) : null}
+               ) : (
+                    <img src={NotImage} alt="" />
+               )}
                <h3 className="films__title">{item.show.name}</h3>
                <div className="films__wrapper-bottom">
                     <div className="films__wrap">
@@ -34,7 +37,9 @@ const FilmsItem: React.FC<IFilmsItemParams> = ({ item }) => (
                          ) : null}
                     </div>
                     <p className="films__genre">
-                         {item.show.genres.join(", ")}
+                         {item.show.genres.length
+                              ? item.show.genres.join(", ")
+                              : "Неизвестно"}
                     </p>
                </div>
           </div>

@@ -1,5 +1,8 @@
 import { IFilmsDetail } from "types/IFilmsDetail";
 
 export interface IStore {
-      list : IFilmsDetail[];
+      mainList : IFilmsDetail[],
+      categoryList : IFilmsDetail[],
+      filmsDetail:IFilmsDetail | null,
+      searchList: IFilmsDetail[]
 }
