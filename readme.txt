@@ -1,2 +1,2 @@
 
-Дипломная работа React JS, Redux, Typescript
+SPA Aplication for catalog films
